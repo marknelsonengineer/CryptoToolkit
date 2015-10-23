@@ -187,7 +187,8 @@ public class AffineKey implements Key {
   @Override
   public void printKey(String prefix) {
     if (a.length == 1 && b.length == 1) {
-      System.out.println(prefix + "Affine key a = [" + this.getA() + "] b = [" + this.getB() + "]");
+      System.out.println(prefix + "Affine key a = [" + this.getA() + "(" + base.intToChar(this.getA()) + ")] "
+                                           + "b = [" + this.getB() + "(" + base.intToChar(this.getB()) + ")]");
     } else {
       System.out.println(prefix + "Affine key");
       System.out.print(prefix + "  a: ");

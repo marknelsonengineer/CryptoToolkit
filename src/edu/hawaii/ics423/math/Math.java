@@ -3,12 +3,35 @@
  */
 package edu.hawaii.ics423.math;
 
+import java.math.BigInteger;
+
 /**
  * Mathematical algorithms in support of ICS 423.
  *
  * @author Mark Nelson
  */
 public class Math {
+
+  /**
+   * Compute the multiplicative Inverse of two values.
+   *
+   * @param a The number to invert.
+   * @param b The number base.
+   *
+   * @return The multiplicative invere of a in base b.
+   */
+  public static int multiplicativeInverse(final int a, final int b) {
+    // Two numbers are relatively prime if they have no
+    // common factors, other than 1.
+    BigInteger bi1 = new BigInteger(new Integer(a).toString());
+    BigInteger bi2 = new BigInteger(new Integer(b).toString());
+
+    // perform modInverse operation on bi1 using bi2
+    BigInteger bi3 = bi1.modInverse(bi2);
+
+    //System.out.println( bi1 + "^-1 mod " + bi2 + " is " +bi3 );
+    return bi3.intValue();
+  }
 
   /**
    * Use the Extended Euclidean Algorithm to derive the greatest common divisor
@@ -49,9 +72,9 @@ public class Math {
       t1 = temp - q * t1;
     }
 
-    System.out.println("r0 = " + r0);
-    System.out.println("s0 = " + s0);
-    System.out.println("t0 = " + t0);
+    // System.out.println("r0 = " + r0);
+    // System.out.println("s0 = " + s0);
+    // System.out.println("t0 = " + t0);
 
     System.out.println("gcd(" + a + ", " + b + ") = " + r0);
 
