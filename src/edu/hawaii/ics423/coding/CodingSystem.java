@@ -25,7 +25,7 @@ public interface CodingSystem {
    * @param inChar The character.
    * @return The code reperesenting the character.
    */
-  public int charToInt(final char inChar);
+   int charToInt(final char inChar);
 
 
   /**
@@ -34,7 +34,7 @@ public interface CodingSystem {
    * @param inInt The codepoint to convert.
    * @return The character.
    */
-  public char intToChar(final int inInt);
+   char intToChar(final int inInt);
 
 
   /**
@@ -60,6 +60,23 @@ public interface CodingSystem {
    /**
     * Print this base conversion table.
     */
-   public void printTable();
+    void printTable();
+
+
+    /**
+     * Return the character used to pad messages with using this coding scheme.
+     *
+     * @return The character used to pad messages.
+     */
+    char getPadding();
+
+
+    /**
+     * Trim the padding from the end of a message.
+     *
+     * @param message The message to process.
+     * @return The message sans tail padding.
+     */
+    public String trimPadding(final String message);
 
 }

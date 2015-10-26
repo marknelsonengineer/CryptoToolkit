@@ -13,7 +13,7 @@ public class Exercise1_1 {
   public void test() {
     String cipherText = "UDWSJLZWSJWS";
 
-    System.out.println("Exercise 1-1:  Decipher " + cipherText + " with the shift cipher");
+    System.out.println("Exercise 1-1:  Decipher " + cipherText + " with the shift cipher ");
 
     BaseUtils base26 = new Base26();
 
@@ -21,7 +21,7 @@ public class Exercise1_1 {
       ShiftKey key = new ShiftKey(i, base26);
       ShiftCipher shiftCipher = new ShiftCipher(base26);
       String shiftCipherRecoveredText = shiftCipher.decipher(cipherText, key);
-      System.out.println("  The key is = [" + key.getShift() + "] or [" + base26.intToChar(key.getShift()) + "]  The recovered text is: [" + shiftCipherRecoveredText + "]");
+      System.out.println("  The key is = [" + key.getShift() + "] or [" + base26.intToChar(key.getShift()) + "]  The recovered text is: [" + shiftCipherRecoveredText + "]\\\\");
     }
   }
 

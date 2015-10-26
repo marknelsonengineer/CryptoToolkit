@@ -22,7 +22,8 @@ public interface Key {
    * Print the key.
    *
    * @param prefix A string to prepend to the printed output.
+   * @param suffix A string to append to the printed output.
    */
-  void printKey(final String prefix);
+  void printKey(final String prefix, String suffix);
 
 }

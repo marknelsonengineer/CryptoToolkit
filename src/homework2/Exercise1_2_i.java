@@ -24,9 +24,9 @@ public class Exercise1_2_i {
     for (int i = 0; i < Base26.CIPHER_BASE; i++) {
       int inverseOfi = Math.multiplicativeInverse(base26.charToInt('h'), Base26.CIPHER_BASE);
       AffineKey affineDecryptionKey = new AffineKey(inverseOfi, i, base26);
-      affineDecryptionKey.printKey("  Decryption key: ");
+      affineDecryptionKey.printKey("  Decryption key: ", "\\\\");
       String affineMessage = affineCipher.decipher(affineCipherText, affineDecryptionKey).toLowerCase();
-      System.out.println("  Affine Cipher message = [" + affineMessage + "]");
+      System.out.println("  Affine Cipher message = [" + affineMessage + "] \\\\");
     }
   }
 

@@ -78,7 +78,7 @@ public class VigenereKey implements Key {
    * Print the Vigenere key.
    */
   @Override
-  public void printKey(final String prefix) {
+  public void printKey(final String prefix, String suffix) {
     this.base.printIntArray(this.key, prefix + "The key is: ");
   }
 

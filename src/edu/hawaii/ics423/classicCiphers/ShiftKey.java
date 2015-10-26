@@ -77,7 +77,7 @@ public class ShiftKey implements Key {
    * Print the key to the console.
    */
   @Override
-  public void printKey(String prefix) {
+  public void printKey(String prefix, String suffix) {
     System.out.println(prefix + "The key is = [" + this.shift + "]");
   }
 

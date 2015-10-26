@@ -16,7 +16,7 @@ public class Exercise3_2 {
     BaseUtils base26 = new Base26();
 
     AffineKey affineDecryptionKey = new AffineKey(3, 5, base26);
-    affineDecryptionKey.printKey("  Decryption: ");
+    affineDecryptionKey.printKey("  Decryption: ", "");
 
     AffineCipher affineCipher = new AffineCipher(base26);
     String affineCipherText = "BUWRELRYYD";

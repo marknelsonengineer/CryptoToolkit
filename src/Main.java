@@ -49,7 +49,7 @@ public final class Main {
     // Exercise Shift Cipher
     System.out.println("Exercise the Shift Cipher");
     ShiftKey shiftKey = new ShiftKey('B', base26);
-    shiftKey.printKey("  ");
+    shiftKey.printKey("  ", "");
 
     String shiftMessage = "ABCXYZabcxyz";
     System.out.println("  Original Message = [" + shiftMessage + "]");
@@ -63,7 +63,7 @@ public final class Main {
     // Exercise Vigenere Cipher
     System.out.println("Exercise the Vigenere Cipher");
     VigenereKey vigenereKey = new VigenereKey("abc", base26);
-    vigenereKey.printKey("  ");
+    vigenereKey.printKey("  ", "");
 
     String vigenereMessage = "ABCXYZabcxyz";
     System.out.println("  Original Message = [" + vigenereMessage + "]");

@@ -8,7 +8,7 @@ public class RailFenceTest {
   public void test() {
     System.out.println("Exercise Rail Fence Cipher");
     RailFenceKey railFenceKey = new RailFenceKey(3);
-    railFenceKey.printKey("  ");
+    railFenceKey.printKey("  ", "");
 
     String message = "thequickbrownfoxjumpsoverthelazydog";
     System.out.println("  Cipher message = [" + message + "]" );

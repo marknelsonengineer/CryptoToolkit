@@ -14,12 +14,12 @@ public class Exercise4_3 {
     BaseUtils base26 = new Base26();
 
     AffineKey affineEncryptionKey = new AffineKey("tblf", "seal", base26);
-    affineEncryptionKey.printKey("  Encryption: ");
+    affineEncryptionKey.printKey("  Encryption: ", "");
 
     base26.printTable();
 
     AffineKey affineDecryptionKey = new AffineKey("lbtv", "seal", base26);
-    affineDecryptionKey.printKey(" Decryption: ");
+    affineDecryptionKey.printKey(" Decryption: ", "");
 
     AffineCipher affineCipher = new AffineCipher(base26);
     String affineMessage = "yourtimeislimited";

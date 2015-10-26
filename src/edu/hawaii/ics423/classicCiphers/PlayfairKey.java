@@ -79,7 +79,7 @@ public class PlayfairKey implements Key {
 
 
   @Override
-  public void printKey(String prefix) {
+  public void printKey(String prefix, String suffix) {
     // TODO Auto-generated method stub
 
   }

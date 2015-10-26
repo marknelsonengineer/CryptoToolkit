@@ -51,7 +51,7 @@ public class RailFenceKey implements Key{
    * @param prefix Text to prepend when the key is printed.
    */
   @Override
-  public void printKey(String prefix) {
+  public void printKey(String prefix, String suffix) {
     System.out.println(prefix + "The number of rails = [" + rails + "]");
   }
 

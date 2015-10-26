@@ -16,8 +16,8 @@ public class AffineTest {
 
     AffineKey affineEncryptionKey = new AffineKey(5, 8, base26);
     AffineKey affineDecryptionKey = new AffineKey(21, 8, base26);
-    affineEncryptionKey.printKey("  Encryption: ");
-    affineDecryptionKey.printKey("  Decryption: ");
+    affineEncryptionKey.printKey("  Encryption: ", "");
+    affineDecryptionKey.printKey("  Decryption: ", "");
     AffineCipher affineCipher = new AffineCipher(base26);
     String affineMessage = "stayhungrystayfoolish";
     String affineCipherText = affineCipher.encipher(affineMessage, affineEncryptionKey);
@@ -27,7 +27,7 @@ public class AffineTest {
     org.junit.Assert.assertEquals(affineClearText, "stayhungrystayfoolish");
 
     affineEncryptionKey = new AffineKey("iamSam", "Sam", base26);
-    affineEncryptionKey.printKey("  ");
+    affineEncryptionKey.printKey("  ", "");
 
     org.junit.Assert.assertEquals(affineEncryptionKey.getA(0), 8);
     org.junit.Assert.assertEquals(affineEncryptionKey.getA(6), 8);

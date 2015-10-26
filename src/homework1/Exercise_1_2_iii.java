@@ -28,7 +28,7 @@ public class Exercise_1_2_iii {
         try {
           int inverseOfi = Math.multiplicativeInverse(x, Base26.CIPHER_BASE);
           affineDecryptionKey = new AffineKey(inverseOfi, y, base26);
-          affineDecryptionKey.printKey("  Decryption key: ");
+          affineDecryptionKey.printKey("  Decryption key: ", "");
         } catch (ArithmeticException e) {
           //System.out.println("[" + x + "] is not invertabe in base 26");
           continue;

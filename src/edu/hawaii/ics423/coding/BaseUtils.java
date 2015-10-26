@@ -54,6 +54,7 @@ public abstract class BaseUtils implements CodingSystem {
   /**
    * Print this base conversion table.
    */
+  @Override
   public void printTable() {
     for (int i = 0; i < this.getCipherBase(); i++) {
       System.out.printf("%2d ", i);
@@ -62,6 +63,24 @@ public abstract class BaseUtils implements CodingSystem {
     for (int i = 0; i < this.getCipherBase(); i++) {
       System.out.printf(" %c ", this.intToChar(i));
     }
+  }
 
+
+  /**
+   * Remove the padding from the end of the message.
+   *
+   * @param message The message to process.
+   * @return The message without the padding.
+   */
+  @Override
+  public String trimPadding(final String message) {
+    String trimmedMessage = message;
+    String padding = Character.toString(this.getPadding());
+
+    while (trimmedMessage.length() > 0 && trimmedMessage.endsWith(padding)) {
+      trimmedMessage = trimmedMessage.substring(0, trimmedMessage.length() - 1);
+    }
+
+    return trimmedMessage;
   }
 }
