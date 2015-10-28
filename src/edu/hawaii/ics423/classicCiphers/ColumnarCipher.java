@@ -82,8 +82,26 @@ public class ColumnarCipher {
    * @return The broken message.
    */
   public String decipher(final String message, final ColumnarCipherKey key) {
-    StringBuffer[] x = new StringBuffer[key.length()];
+    StringBuffer[] strips = new StringBuffer[key.length()];
     StringBuffer clearText = new StringBuffer();
+
+    int columns = key.length();
+    int rows = (message.length() - 1) / key.length() + 1;
+
+    strips = makeStrips(message, key);
+
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < columns; j++) {
+        clearText.append(strips[j].substring(i, i + 1));
+      }
+    }
+
+    return codingSystem.trimPadding(clearText.toString()).toLowerCase();
+  }
+
+
+  public StringBuffer[] makeStrips(final String message, final ColumnarCipherKey key) {
+    StringBuffer[] strips = new StringBuffer[key.length()];
 
     int columns = key.length();
     int rows = (message.length() - 1) / key.length() + 1;
@@ -91,20 +109,16 @@ public class ColumnarCipher {
     int[] keyMap = key.getKeyMap();
 
     for (int i = 0; i < columns; i++) {
-      x[i] = new StringBuffer();
+      strips[i] = new StringBuffer();
     }
 
     for (int j = 0; j < columns; j++) {
-      x[keyMap[j]].append(message.substring(j * rows, ((j + 1) * rows)));
+      strips[keyMap[j]].append(message.substring(j * rows, ((j + 1) * rows)));
     }
 
-    for (int i = 0; i < rows; i++) {
-      for (int j = 0; j < columns; j++) {
-        clearText.append(x[j].substring(i, i + 1));
-      }
-    }
-
-    return codingSystem.trimPadding(clearText.toString()).toLowerCase();
+    return strips;
   }
+
+
 
 }
